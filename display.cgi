@@ -186,9 +186,11 @@ fmt.Println("Hello", myname)        // Writing output to STDOUT
 `;
 
              else
+             {
             document.getElementById("codearea").innerHTML=``;
+            alert('Please select Desired Langauage at least');
         }
-        
+        }
        </script>
  <script>
                 var database; 
@@ -218,11 +220,11 @@ fmt.Println("Hello", myname)        // Writing output to STDOUT
                           window.inputtestcase=[database[3],database[4],database[5]];
                           window.outputtestcase=[database[0],database[1],database[2]];
                           window.actualresult=[database[6],database[7],database[8]];
-                          console.log(actualresult.length);         
+                          //console.log(actualresult.length);         
                            $.each(inputtestcase , function (index, value){
-                              $("#"+section[index]).css("width", "300px");
+                              $("#"+section[index]).css("width","300px");
                               $("#"+section[index]).css("height", "150px");
-                              $("#"+section[index]).html("<h4><u>TEST CASE &nbsp;&nbsp;"+(index+1)+"</u></h4><b style='text-align:left;'>INPUT</b>:&nbsp &nbsp"+inputtestcase[index]+"<br></u></h4><b style='text-align:left;'>EXPECTED RESULT</b>:&nbsp &nbsp"+(outputtestcase[index])+"<br><b>YOUR RESULT:</b>"+(actualresult[index]));     
+                              $("#"+section[index]).html("<h4><u>TEST CASE &nbsp;&nbsp;"+(index+1)+"</u></h4><b style='text-align:left;'>INPUT</b>:&nbsp &nbsp"+inputtestcase[index].trim()+"<br></u></h4><b style='text-align:left;'>EXPECTED RESULT</b>:&nbsp &nbsp"+(outputtestcase[index]).trim()+"<br><b>YOUR RESULT:</b>&nbsp &nbsp"+(actualresult[index]).trim());     
                      
                            });
                         }
@@ -233,39 +235,6 @@ fmt.Println("Hello", myname)        // Writing output to STDOUT
                     };
                   });
                 });
-
-                /*$(document).ready(function ()
-                {    
-                 $("#Save").click(function(){                      
-                 var data1=document.getElementsByName("code")[0].value; 
-                 var e = document.getElementById("inlineFormCustomSelectPref");
-                 var async_request=[];
-                 var strUser = parseInt(e.options[e.selectedIndex].value);
-                 var section=['first','second','thrid'];
-                 $.each(inputtestcase , function (index, value){
-                  $.ajax({  
-                     url: 'https://www.compilebin.com/compile',  
-                     type: 'POST',  
-                     dataType: 'json', 
-                     async: true, 
-                     data:  {
-                            'language' : strUser,
-                            'code' : data1,
-                            "stdin":value,                            
-                            'key' : '8d21a6807acec4506d8d8733f73ee239'
-                           },  //8d21a6807acec4506d8d8733f73ee239
-                     success: function (data, textStatus, xhr) {  
-                        $("#"+section[index]).css("width", "300px");
-                        $("#"+section[index]).css("height", "150px");
-                      $("#"+section[index]).html("<h4><u>TEST CASE &nbsp;&nbsp;"+(index+1)+"</u></h4><b style='text-align:left;'>EXPECTED RESULT</b>:&nbsp &nbsp"+(outputtestcase[index])+"<br><b>YOUR RESULT:</b>"+JSON.stringify(data.output));     
-                     },  
-                     error: function (xhr, textStatus, errorThrown) {  
-                         console.log('Error in Operation');  
-                     }  
-                 });           
-                  });
-             });  
-         });  */
         </script> 
 </head><style>
 .card{
@@ -338,9 +307,9 @@ def  output(file,valuefromform):
                       <input type="button" id="Save"  class="btn btn-success" value="Run code" data-key="""+str(valuefromform)+""" /> 
                       </form>
                       
-              <div id='first'></div>
-                <div id="second"></div>
-                <div id="thrid"></div>""")
+              <div id='first' style="white-space: pre-wrap;"></div>
+                <div id="second" style="white-space: pre-wrap;"></div>
+                <div id="thrid" style="white-space: pre-wrap;"></div>""")
     
 
 
@@ -357,8 +326,16 @@ def data():
         return '3'
     elif d.getvalue('fourSubmit')=='Solve it?=4':
         return '4'
-    else:
+    elif d.getvalue('fiveSubmit')=='Solve it?=5':
         return '5'
+    elif d.getvalue('sixSubmit')=='Solve it?=6':
+        return '6'
+    elif d.getvalue('sevenSubmit')=='Solve it?=7':
+        return '7'
+    elif d.getvalue('eightSubmit')=='Solve it?=8':
+        return '8'
+    else:
+        return '9'
     
 
 if __name__=="__main__":

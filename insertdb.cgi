@@ -23,10 +23,12 @@ def connectDB():
 def data():
      url=[]
      #url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\array-ds.html',"3 2 6 5","12 36 12 35 21","12 21 365 325 214 144","4\n 5 6 2 3","5\n 21 35 12 36 12","6\n 144 214 325 365 21 12"])
-     #url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\Arithmatic.html',"6","8","1","3\n3","4\n2","3\n2"])
+     url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\Arithmatic.html',"6\n0\n9","6\n2\n8","5\n1\n6","3\n3","4\n2","3\n2"])
      #url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\loop.html',"0\n1\n4\n9\n16\n25","0\n1\n4\n9","0\n1\n4\n9\n16\n25\n36\n49","5","3","7"])
-     url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\helloworld.html',"Hello, World!","HELLO WORLD!","heLLo WoRlD!","Hello, World!","HELLO WORLD!","heLLo WoRlD!"])
+     #url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\balancedBracket.html',"YES\nNO\nYES","NO\nYES","NO\nYES\nYES","3\n{[()]}\n{[(])}\n{{[[(())]]}}","2\{[(])}\n{{[[(())]]}}","3\n{[(])}\n{{[[(())]]}}\n{[()]}"])
+     #url.append(['C:\\\\xampp\\\\htdocs\\\\pythoncreatedb\\\\programs\\\\linkedlist.html',"16\n13","15\n12\n13","12\n11","2\n16\n13","3\n15\n12\n13","2\n12\n11"])
      return url
+
 
 def create(db,cursor):
      cursor.execute("""create table virtual(id int AUTO_INCREMENT PRIMARY KEY,dataurl VARCHAR(70) NOT NULL,

@@ -1,6 +1,9 @@
-#!E:\pythoninstall\python.exe
+#!C:\Users\nites\AppData\Local\Programs\Python\Python37-32\python.exe
 
 import cgi
+import mysql.connector as conn
+import json
+import requests
 
 def htmltop():
     print("""Content-type:text/html\n\n
@@ -16,6 +19,8 @@ def htmltail():
     print("""</body>
     </html>    
     """)
+
+    
 def getdata():
     file=cgi.FieldStorage()
     firstname=file.getvalue("Firstname")
